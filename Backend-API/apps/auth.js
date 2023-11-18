@@ -5,8 +5,6 @@ import multer from "multer";
 import { db } from "../utils/db.js";
 
 const authRouter = Router();
-
-// กำหนดที่เก็บไฟล์อัปโหลด
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
@@ -16,7 +14,6 @@ authRouter.post("/register", upload.single("avatar"), async (req, res) => {
     password: req.body.password,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    // เพิ่มข้อมูลไฟล์ที่อัปโหลดเข้าไปใน user
     avatar: req.file.buffer.toString("base64"),
   };
 
