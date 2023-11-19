@@ -3,28 +3,26 @@ import React from "react";
 
 const FinalPage = ({ onSubmit, onPrev, formData, setFormData }) => {
   const handleFormSubmit = async () => {
-    // ทำตามที่คุณต้องการทำในฟังก์ชัน onSubmit
-    // ตรงนี้คุณสามารถทำการส่งข้อมูลไปยัง API หรือทำตามกระบวนการที่คุณต้องการ
-
-    // เช่น
     try {
-      // ส่งข้อมูลไปยัง API
-      // ตัวอย่างเท่านั้น, คุณต้องแก้ไขตามที่ API ของคุณต้องการ
-      const response = await axios.post(
-        "http://localhost:4000/auth/register",
-        formData
-      );
+      const response = await fetch("http://localhost:3000/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // ตรวจสอบการตอบกลับจาก API และทำการจัดการตามความเหมาะสม
-      if (response.status === 200) {
-        console.log("Data submitted successfully");
-        // ทำอย่างอื่น ๆ ที่คุณต้องการทำหลังจากส่งข้อมูลสำเร็จ
+      if (response.ok) {
+        // Handle successful API response
+        console.log("Form submitted successfully!");
+        onSubmit();
       } else {
-        console.error("Failed to submit data");
-        // ทำอย่างอื่น ๆ ที่คุณต้องการทำหลังจากส่งข้อมูลไม่สำเร็จ
+        // Handle API error response
+        console.error("Error submitting form:", response.statusText);
       }
     } catch (error) {
-      console.error("An error occurred:", error);
+      // Handle network or other errors
+      console.error("Error submitting form:", error.message);
     }
   };
 

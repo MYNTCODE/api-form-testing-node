@@ -2,11 +2,10 @@
 import React from "react";
 
 const ContactInfoPage = ({ onNext, onPrev, formData, setFormData }) => {
-  const handleInputChange = (e) => {
+  const handleInputChange = (field, value) => {
     setFormData({
       ...formData,
-      email: e.target.value,
-      password: e.target.value,
+      [field]: value,
     });
   };
   return (
@@ -16,14 +15,14 @@ const ContactInfoPage = ({ onNext, onPrev, formData, setFormData }) => {
         type="text"
         placeholder="email"
         value={formData.email}
-        onChange={handleInputChange}
+        onChange={(e) => handleInputChange("email", e.target.value)}
         className="mb-4 p-2 border rounded"
       />
       <input
-        type="text"
+        type="password"
         placeholder="password"
         value={formData.password}
-        onChange={handleInputChange}
+        onChange={(e) => handleInputChange("password", e.target.value)}
         className="mb-4 p-2 border rounded"
       />
       <button onClick={onPrev} className="btn-gray mr-4">
