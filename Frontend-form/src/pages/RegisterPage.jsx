@@ -16,6 +16,7 @@ const RegisterPage = () => {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {
@@ -48,7 +49,7 @@ const RegisterPage = () => {
     <FinalPage
       key="final-page"
       onSubmit={() => {
-        // Handle form submission logic here
+        navigate(`/login`);
         console.log("Form submitted:", formData);
       }}
       onPrev={() => setCurrentPage(1)}

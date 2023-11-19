@@ -13,7 +13,8 @@ function LoginPage() {
       console.log("Response:", response);
 
       if (response.success) {
-        navigate("/");
+        // ส่ง user_id ไปที่ path /profile/:user_id
+        navigate(`/profile/${response.data.data.user_id}`);
       } else {
         message.error("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
       }
@@ -30,7 +31,7 @@ function LoginPage() {
     "border rounded-lg border-grey300 w-[100%] h-11 px-4 py-2.5";
 
   const formStyle =
-    "bg-white border border-grey300 rounded-lg h-full mt-[52px] mb-[87px] px-[87px] pt-[32px] pb-[53px] w-[740px] items-center gap-4";
+    "bg-white border  rounded-lg h-full mt-[52px] mb-[87px] px-[87px] pt-[32px] pb-[53px] w-[740px] items-center gap-4";
 
   const labelStyle = {
     marginTop: "10px",
@@ -45,7 +46,7 @@ function LoginPage() {
   return (
     <>
       <div className="flex flex-col">
-        <div className="flex w-[100%] min-h-screen justify-center bg-bg ">
+        <div className="flex w-[100%] min-h-screen justify-center items-center ">
           <Form
             labelCol={{ span: 10 }}
             wrapperCol={{ span: 24 }}
@@ -57,12 +58,12 @@ function LoginPage() {
             autoComplete="off"
             className={formStyle}
           >
-            <h1 className="text-blue950 text-center text-[32px] font-medium">
-              เข้าสู่ระบบ
+            <h1 className=" mt-10 text-blue950 text-center text-[32px] font-medium">
+              MYNTCODE
             </h1>
             <Form.Item
               className="w-440px h-72px"
-              label={<span style={labelStyle}>อีเมล</span>}
+              label={<span style={labelStyle}>Email</span>}
               name="email"
               labelAlign="top"
               labelCol={{ span: 24 }}
@@ -78,7 +79,7 @@ function LoginPage() {
 
             <Form.Item
               className="w-440px h-72px"
-              label={<span style={labelStyle}>รหัสผ่าน</span>}
+              label={<span style={labelStyle}>Password</span>}
               labelAlign="top"
               name="password"
               labelCol={{ span: 24 }}
@@ -96,16 +97,14 @@ function LoginPage() {
             </Form.Item>
 
             <Form.Item style={{ textAlign: "center" }}>
-              <button className="btn-primary w-[100%] mt-5 mb-5" type="submit">
-                เข้าสู่ระบบ
+              <button className=" bg-slate-200 w-[50%] mt-5 mb-5" type="submit">
+                Login
               </button>
             </Form.Item>
             <div className="text-center">
-              <span className="text-base text-grey700">
-                ยังไม่มีบัญชีผู้ใช้ HomeServices?
-              </span>
-              <a className="btn-ghost" onClick={handleRegisterClick}>
-                <span className="underline">ลงทะเบียน</span>
+              <span className="text-grey-700"></span>
+              <a className="" onClick={handleRegisterClick}>
+                <span className="underline">Register</span>
               </a>
             </div>
           </Form>

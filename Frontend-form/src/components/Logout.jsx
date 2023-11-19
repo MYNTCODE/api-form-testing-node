@@ -2,15 +2,14 @@ import { useAuth } from "../contexts/authentication";
 
 function Logout() {
   const { logout } = useAuth();
-  console.log(logout);
+
   return (
     <div>
-      Logout
       <button
-        className="flex pt-2 p-2 border-t border-grey300 hover:bg-[#EFEFF2] hover:text-[#232630]"
+        className=" bg-red-400  flex pt-2 px-4 border-t border-grey300 hover:bg-[#EFEFF2] hover:text-[#232630]"
         onClick={logout}
       >
-        <span></span>ออกจากระบบ
+        <span>Logout</span>
       </button>
     </div>
   );

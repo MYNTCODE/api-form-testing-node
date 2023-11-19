@@ -30,7 +30,7 @@ function AuthProvider(props) {
       const result = await axios.post("http://localhost:3000/auth/login", data);
       console.log(result);
       const token = result.data.token;
-      const fullName = result.data.data.token;
+      const fullName = result.data.data.fullName;
       localStorage.setItem("token", token);
       localStorage.setItem("fullName", fullName);
       const userDataFromToken = jwtDecode(token);
@@ -41,7 +41,7 @@ function AuthProvider(props) {
       localStorage.setItem("fullName", userDataFromToken.fullName);
       localStorage.setItem("phoneNumber", userDataFromToken.phoneNumber);
       localStorage.setItem("email", userDataFromToken.email);
-      navigate("/");
+      navigate(`/profile/${userDataFromToken.user_id}`);
     } catch (e) {
       return {
         success: false,
@@ -63,7 +63,7 @@ function AuthProvider(props) {
     localStorage.removeItem("phoneNumber");
     localStorage.removeItem("email");
     localStorage.removeItem("role");
-    navigate("/notuser");
+    navigate("/login");
   };
   const isAuthenticated = Boolean(localStorage.getItem("token"));
 
@@ -84,7 +84,6 @@ function AuthProvider(props) {
   );
 }
 
-// this is a hook that consume AuthContext
 const useAuth = () => React.useContext(AuthContext);
 
 export { AuthProvider, useAuth };

@@ -1,41 +1,71 @@
-// FinalPage.js
-import React from "react";
+import React, { useState } from "react";
 
 const FinalPage = ({ onSubmit, onPrev, formData, setFormData }) => {
+  const [file, setFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
+
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    setFile(selectedFile);
+
+    // Create a preview URL for the selected image
+    const previewURL = URL.createObjectURL(selectedFile);
+    setImagePreview(previewURL);
+  };
+
   const handleFormSubmit = async () => {
     try {
+      const formDataWithFile = new FormData();
+      formDataWithFile.append("file", file);
+
+      for (const key in formData) {
+        formDataWithFile.append(key, formData[key]);
+      }
+
       const response = await fetch("http://localhost:3000/auth/register", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        body: formDataWithFile,
       });
 
       if (response.ok) {
-        // Handle successful API response
         console.log("Form submitted successfully!");
         onSubmit();
       } else {
-        // Handle API error response
         console.error("Error submitting form:", response.statusText);
       }
     } catch (error) {
-      // Handle network or other errors
       console.error("Error submitting form:", error.message);
     }
   };
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Final Page</h1>
-      {/* แสดงข้อมูลหรืออื่น ๆ ที่คุณต้องการแสดงใน FinalPage */}
-      <button onClick={onPrev} className="btn-blue mr-2">
-        Previous
-      </button>
-      <button onClick={handleFormSubmit} className="btn-blue">
-        Submit
-      </button>
+      <h1 className="text-3xl font-bold mb-6">Upload your profile picture</h1>
+
+      <div className=" flex-col ml-16">
+        {imagePreview && (
+          <img
+            src={imagePreview}
+            alt="Selected file preview"
+            className="max-w-full max-h-64 mb-4"
+          />
+        )}
+
+        <input
+          type="file"
+          onChange={handleFileChange}
+          accept="image/*"
+          className="mt-4 "
+        />
+      </div>
+      <div className="mt-6">
+        <button onClick={onPrev} className="bg-slate-50 mr-4">
+          Previous
+        </button>
+        <button onClick={handleFormSubmit} className="bg-slate-50">
+          Submit
+        </button>
+      </div>
     </div>
   );
 };
