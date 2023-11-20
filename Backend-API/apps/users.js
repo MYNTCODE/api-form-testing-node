@@ -157,6 +157,7 @@ usersRouter.delete("/:id", async (req, res) => {
   }
 });
 
+// pdf file
 const createPdf = (data) => {
   const doc = new PDFDocument();
   const outputFileName = "output.pdf";

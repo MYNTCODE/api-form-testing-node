@@ -2,7 +2,7 @@ import { Router } from "express";
 import supabase from "../utils/supabase.js";
 import bcrypt from "bcrypt";
 import multer from "multer";
-import jwt from "jsonwebtoken"; // npm install jsonwebtoken
+import jwt from "jsonwebtoken";
 
 const authRouter = Router();
 

@@ -44,7 +44,7 @@ const Profile = () => {
       pdfDoc.text(`Work Experience: ${userData.work_experience}`, 10, 80);
       pdfDoc.text(`skill: ${userData.skill_title}`, 10, 90);
 
-      // Uncomment the following block if needed
+      // Photo from profile
       // if (userData.user_photo) {
       //   const userPhoto = await fetch(userData.user_photo);
       //   const photoBlob = await userPhoto.blob();
@@ -240,7 +240,7 @@ const Profile = () => {
                       setEditedSummaryDescription(e.target.value)
                     }
                   />
-                </label>{" "}
+                </label>
               </div>
               <div className="pt-10">
                 <label className="flex justify-center ml-[-50px]">
@@ -252,7 +252,7 @@ const Profile = () => {
                     value={editedWorkExperience}
                     onChange={(e) => setEditedWorkExperience(e.target.value)}
                   />
-                </label>{" "}
+                </label>
               </div>
               <div className="pt-10">
                 <label className="flex justify-center ml-8">
@@ -265,7 +265,7 @@ const Profile = () => {
                     value={editedSkillTitle}
                     onChange={(e) => setEditedSkillTitle(e.target.value)}
                   />
-                </label>{" "}
+                </label>
               </div>
             </div>
             <div className="pt-10">

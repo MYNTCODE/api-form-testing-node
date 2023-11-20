@@ -16,15 +16,6 @@ function AuthProvider(props) {
 
   const navigate = useNavigate();
 
-  // const login = async (data) => {
-  //   const result = await axios.post("http://localhost:3000/auth/login", data);
-  //   const token = result.data.token;
-  //   localStorage.setItem("token", token);
-  //   const userDataFromToken = jwtDecode(token);
-  //   setState({ ...state, user: userDataFromToken });
-  //   navigate("/profile");
-  // };
-
   const login = async (data) => {
     try {
       const result = await axios.post("http://localhost:3000/auth/login", data);

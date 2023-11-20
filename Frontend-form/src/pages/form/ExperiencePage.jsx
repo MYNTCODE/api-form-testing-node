@@ -1,7 +1,7 @@
 // ContactInfoPage.js
 import React from "react";
 
-const ContactInfoPage = ({ onNext, onPrev, formData, setFormData }) => {
+const ExperiencePage = ({ onNext, onPrev, formData, setFormData }) => {
   const handleInputChange = (field, value) => {
     setFormData({
       ...formData,
@@ -63,4 +63,4 @@ const ContactInfoPage = ({ onNext, onPrev, formData, setFormData }) => {
   );
 };
 
-export default ContactInfoPage;
+export default ExperiencePage;
