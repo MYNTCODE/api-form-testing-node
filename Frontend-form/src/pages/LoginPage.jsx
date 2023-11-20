@@ -34,12 +34,12 @@ function LoginPage() {
 
   const labelStyle = {
     marginTop: "10px",
-    color: "var(--gray-900, #323640)",
+    color: " #323640)",
     fontFamily: "Prompt",
     fontSize: "16px",
     fontStyle: "normal",
     fontWeight: 500,
-    lineHeight: "150%", // 24px
+    lineHeight: "150%",
   };
 
   return (

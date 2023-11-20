@@ -21,7 +21,7 @@ function RegisterPage() {
     fontSize: "16px",
     fontStyle: "normal",
     fontWeight: 500,
-    lineHeight: "150%", // 24px
+    lineHeight: "150%",
   };
 
   // State for checked checkbox and form submission

@@ -1,11 +1,7 @@
-// RegisterPage.js
-
 import { useNavigate } from "react-router-dom";
 import PersonalInfoPage from "./form/PersonalInfoPage";
 import ContactInfoPage from "./form/ContactInfoPage";
 import FinalPage from "./form/FinalPage";
-
-// RegisterPage.js
 import { useState, useEffect } from "react";
 
 const RegisterPage = () => {

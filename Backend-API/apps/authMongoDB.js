@@ -55,7 +55,6 @@ authRouter.post("/register", upload.single("avatar"), async (req, res) => {
   }
 });
 
-// API เพื่อเอาไว้ Login ตัว User
 authRouter.post("/login", async (req, res) => {
   const user = await db.collection("users").findOne({
     username: req.body.username,
