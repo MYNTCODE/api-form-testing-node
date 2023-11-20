@@ -230,7 +230,7 @@ const Profile = () => {
               <div className="pt-10">
                 <label className="flex justify-center ml-[-75px]">
                   Summary Description
-                  <input
+                  <textarea
                     className="rounded-lg  bg-white w-[500px] text-black border ml-4 px-4 h-11  border-grey300 focus:border-blue600 focus:outline-none"
                     type="textarea"
                     name="edited_summary_describtion"

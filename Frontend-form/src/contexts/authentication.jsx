@@ -34,10 +34,8 @@ function AuthProvider(props) {
       localStorage.setItem("token", token);
       localStorage.setItem("fullName", fullName);
       const userDataFromToken = jwtDecode(token);
-      console.log(userDataFromToken.role);
       setState({ ...state, user: userDataFromToken });
       localStorage.setItem("user_id", userDataFromToken.user_id);
-      localStorage.setItem("role", userDataFromToken.role);
       localStorage.setItem("fullName", userDataFromToken.fullName);
       localStorage.setItem("phoneNumber", userDataFromToken.phoneNumber);
       localStorage.setItem("email", userDataFromToken.email);
@@ -62,7 +60,6 @@ function AuthProvider(props) {
     localStorage.removeItem("fullName");
     localStorage.removeItem("phoneNumber");
     localStorage.removeItem("email");
-    localStorage.removeItem("role");
     navigate("/login");
   };
   const isAuthenticated = Boolean(localStorage.getItem("token"));

@@ -35,7 +35,7 @@ const ContactInfoPage = ({ onNext, onPrev, formData, setFormData }) => {
             onChange={(e) =>
               handleInputChange("summary_description", e.target.value)
             }
-            className="ml-[130px] mb-4 p-2 border rounded w-[500px]"
+            className="ml-[170px] mb-4 p-2 border rounded w-[500px]"
           />
         </label>
       </div>
