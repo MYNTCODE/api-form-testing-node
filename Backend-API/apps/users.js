@@ -12,6 +12,7 @@ import { protect } from "../middlewares/protects.js";
 const usersRouter = Router();
 
 usersRouter.use(protect);
+
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 

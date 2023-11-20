@@ -13,10 +13,9 @@ function LoginPage() {
       console.log("Response:", response);
 
       if (response.success) {
-        // ส่ง user_id ไปที่ path /profile/:user_id
         navigate(`/profile/${response.data.data.user_id}`);
       } else {
-        message.error("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
+        message.error("Invalid email or password format ");
       }
     } catch (error) {
       console.error("Login failed:", error);
@@ -70,11 +69,11 @@ function LoginPage() {
               rules={[
                 {
                   required: true,
-                  message: "กรุณากรอกอีเมล",
+                  message: "Email is required",
                 },
               ]}
             >
-              <Input className={inputStyle} placeholder="กรุณากรอกอีเมล" />
+              <Input className={inputStyle} placeholder="email" />
             </Form.Item>
 
             <Form.Item
@@ -86,14 +85,11 @@ function LoginPage() {
               rules={[
                 {
                   required: true,
-                  message: "กรุณากรอกรหัสผ่าน",
+                  message: "Password is required",
                 },
               ]}
             >
-              <Input.Password
-                className={inputStyle}
-                placeholder="กรุณากรอกรหัสผ่าน"
-              />
+              <Input.Password className={inputStyle} placeholder="password" />
             </Form.Item>
 
             <Form.Item style={{ textAlign: "center" }}>

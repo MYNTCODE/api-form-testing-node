@@ -22,6 +22,10 @@ function jwtInterceptor() {
         error.response.statusText === "Unauthorized"
       ) {
         window.localStorage.removeItem("token");
+        window.localStorage.removeItem("user_id");
+        window.localStorage.removeItem("fullName");
+        window.localStorage.removeItem("phoneNumber");
+        window.localStorage.removeItem("email");
         window.location.replace("/login");
       }
       return Promise.reject(error);
