@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import PersonalInfoPage from "./form/PersonalInfoPage";
-import ContactInfoPage from "./form/ContactInfoPage";
+import ExperiencePage from "./form/ExperiencePage";
 import FinalPage from "./form/FinalPage";
 import { useState, useEffect } from "react";
 
@@ -35,7 +35,7 @@ const RegisterPage = () => {
       formData={formData}
       setFormData={setFormData}
     />,
-    <ContactInfoPage
+    <ExperiencePage
       key="contact-info"
       onNext={() => setCurrentPage(2)}
       onPrev={() => setCurrentPage(0)}
