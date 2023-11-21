@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 const FinalPage = ({ onSubmit, onPrev, formData, setFormData }) => {
   const [file, setFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
