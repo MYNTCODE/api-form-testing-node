@@ -3,7 +3,6 @@ import React, { useState } from "react";
 
 const PersonalInfoPage = ({ onNext, formData, setFormData }) => {
   const [errors, setErrors] = useState({});
-  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
