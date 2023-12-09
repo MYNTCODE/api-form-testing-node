@@ -1,4 +1,3 @@
-// PersonalInfoPage.js
 import React, { useState } from "react";
 
 const PersonalInfoPage = ({ onNext, formData, setFormData }) => {

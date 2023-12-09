@@ -1,0 +1,92 @@
+{
+  "hash": "7bcb5f87",
+  "browserHash": "3717940c",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "aef52578",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "8fc4dbf4",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "08898f87",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "07e17ea8",
+      "needsInterop": false
+    },
+    "jwt-decode": {
+      "src": "../../node_modules/jwt-decode/build/jwt-decode.esm.js",
+      "file": "jwt-decode.js",
+      "fileHash": "be676717",
+      "needsInterop": false
+    },
+    "antd": {
+      "src": "../../node_modules/antd/es/index.js",
+      "file": "antd.js",
+      "fileHash": "0550b78c",
+      "needsInterop": false
+    },
+    "@ant-design/icons": {
+      "src": "../../node_modules/@ant-design/icons/es/index.js",
+      "file": "@ant-design_icons.js",
+      "fileHash": "6bf8991f",
+      "needsInterop": false
+    },
+    "react-pdf": {
+      "src": "../../node_modules/react-pdf/dist/esm/index.js",
+      "file": "react-pdf.js",
+      "fileHash": "3a7e2574",
+      "needsInterop": false
+    },
+    "jspdf": {
+      "src": "../../node_modules/jspdf/dist/jspdf.es.min.js",
+      "file": "jspdf.js",
+      "fileHash": "18c074f8",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "html2canvas.esm-MQ6LWHS5": {
+      "file": "html2canvas__esm-MQ6LWHS5.js"
+    },
+    "purify.es-MK5UDT3R": {
+      "file": "purify__es-MK5UDT3R.js"
+    },
+    "index.es-IRYBWAXM": {
+      "file": "index__es-IRYBWAXM.js"
+    },
+    "chunk-BUBR4DMH": {
+      "file": "chunk-BUBR4DMH.js"
+    },
+    "chunk-OO45PHZ3": {
+      "file": "chunk-OO45PHZ3.js"
+    },
+    "chunk-AIHM4NAJ": {
+      "file": "chunk-AIHM4NAJ.js"
+    },
+    "chunk-MDULAXYW": {
+      "file": "chunk-MDULAXYW.js"
+    },
+    "chunk-L7VBH4KM": {
+      "file": "chunk-L7VBH4KM.js"
+    },
+    "chunk-TGJCFA52": {
+      "file": "chunk-TGJCFA52.js"
+    },
+    "chunk-5HFSU4IV": {
+      "file": "chunk-5HFSU4IV.js"
+    }
+  }
+}
