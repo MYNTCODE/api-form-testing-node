@@ -157,43 +157,4 @@ usersRouter.delete("/:id", async (req, res) => {
   }
 });
 
-// pdf file
-const createPdf = (data) => {
-  const doc = new PDFDocument();
-  const outputFileName = "output.pdf";
-  const outputPath = path.resolve(__dirname, outputFileName);
-  doc.pipe(fs.createWriteStream(outputPath));
-
-  doc.fontSize(12).text(`Profile\n\n`);
-  doc.fontSize(10).text(`Name: ${data.fullName}\n\n`);
-
-  doc.end();
-
-  return outputPath;
-};
-usersRouter.get("/pdf/:id", async (req, res) => {
-  try {
-    const userId = req.params.id;
-
-    const { data, error } = await supabase
-      .from("users")
-      .select()
-      .eq("user_id", userId)
-      .single();
-
-    if (error || !data) {
-      return res.status(404).json({ error: "User not found" });
-    }
-
-    const outputPath = createPdf(data);
-
-    res.sendFile(outputPath, () => {
-      fs.unlinkSync(outputPath);
-    });
-  } catch (error) {
-    console.error("Error:", error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-});
-
 export default usersRouter;
